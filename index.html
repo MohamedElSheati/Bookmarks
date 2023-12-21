@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmark</title>
+    <link rel="icon" href="2899445.png">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/Assignment 10.css">
+</head>
+<body class="bg-danger-subtle">
+    <!-- ------------------------container-------------------------- -->
+
+    <div class="container " id="tocontainer">
+        <h1 class="position-relative  my-5 text-center">Bookmarker</h1>
+        <div class="bookmark-body w-100 py-2 my-4">
+          <h2 class="text-center">Bookmark your favorite sites</h2>
+          <form >
+            <label for="sitename" class=" fw-bold p-2 label1">Site Name</label>
+            <input type="text" class="form-control " id="sitename" placeholder="Bookmark Name" >
+            <label for="siteurl" class=" fw-bold p-2 label2">Site URL</label>
+            <input type="text" class="form-control " id="siteurl" placeholder="Website URL">
+            <button type="button" class="d-grid  btn btn-danger px-5  my-4 mx-auto  " onclick="addSite()">Submitt</button>
+            <input type="text" placeholder="Search For Site" id="searchInput" onkeyup="search()"
+                class="mx-auto my-3 form-control w-50 ">
+          </form>  
+        </div>
+        <table class="table table-light  text-center">
+            <thead>
+                <th>Index</th>
+                <th>Website Name</th>
+                <th>Visit</th>
+                <th>Delete</th>
+            </thead>
+            <tbody id="mydata">
+               
+
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <!-- ----------------------Alert Massage---------------------------------- -->
+
+    <div class="check-form p-4  bg-white w-50 position-absolute z-3 translate-middle top-50 start-50 " id="alert">
+        <div class="d-flex justify-content-between align-items-center ">
+            <div class="cricles d-flex justify-content-around  ">
+                <span class="rounded-circle me-2 child1"></span>
+                <span class="rounded-circle me-2 child2"></span>
+                <span class="rounded-circle me-2 child3"></span>
+            </div>
+            <button class=" btn border-0 fs-3" onclick="hideAlert()">
+                <i class="fa-solid fa-xmark "></i>
+            </button>
+            
+        </div>
+        <h2>Site Name or Url is not valid, Please follow the rules below :</h2>
+        <p>Site name must contain at least 3 letters and the first one is capital</p>
+        <p>Site URL must be a valid one</p>
+
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/Assignment 10.js"></script>
+
+    
+</body>
+</html>
