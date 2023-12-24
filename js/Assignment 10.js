@@ -78,9 +78,36 @@ function addSite(){
     sites.push(site)
     localStorage.setItem("sitesData",JSON.stringify(sites))
     showSite()
+          }
+    }
+    else{
+       showAlert()
+       clearForm()
+       document.getElementById('tocontainer').style.pointerEvents='none'
+    }
+    clearForm()
+}
+document.querySelector("#submitBtn").addEventListener('click',addSite)
 
-        }
-    
+
+function editSite(index){
+    if(valid(regexName,siteNameInput)==true && valid(regexURL,siteURLInput)==true && valid(regexDes,siteDesInput)==true){
+        if(checkSite()==true){alert("This site is alerady exist")
+                              document.querySelector("#submitBtn").classList.replace('d-none',"d-grid")
+                              document.querySelector("#editBtn").classList.add("d-none")}
+        else{
+            editIndex=index
+        var site ={
+        name : siteNameInput.value,
+        url : siteURLInput.value,
+        Des: siteDesInput.value,
+    }
+    sites.splice(index,1,site)
+     localStorage.setItem("sitesData",JSON.stringify(sites))
+     showSite()
+     document.querySelector("#submitBtn").classList.replace('d-none',"d-grid")
+     document.querySelector("#editBtn").classList.add("d-none")
+            }
     }
     else{
        showAlert()
@@ -90,7 +117,9 @@ function addSite(){
     clearForm()
 
 }
-document.querySelector("#submitBtn").addEventListener('click',addSite)
+document.querySelector("#editBtn").addEventListener('click',function(){
+    editSite(editIndex)
+})
 
 
 function deleteSite(index){
@@ -147,34 +176,7 @@ function updateSite(index){
     document.querySelector("#submitBtn").classList.replace('d-grid',"d-none")
 }
 
-function editSite(index){
-    if(valid(regexName,siteNameInput)==true && valid(regexURL,siteURLInput)==true && valid(regexDes,siteDesInput)==true){
-        if(checkSite()==true){alert("This site is already exist")
-                             document.querySelector("#submitBtn").classList.replace('d-none',"d-grid")
-                            document.querySelector("#editBtn").classList.add("d-none")}
-        else{    
-            editIndex=index
-        var site ={
-        name : siteNameInput.value,
-        url : siteURLInput.value,
-        Des: siteDesInput.value,
-    }
-    sites.splice(index,1,site)
-    localStorage.setItem("sitesData",JSON.stringify(sites))
-    showSite()
-    document.querySelector("#submitBtn").classList.replace('d-none',"d-grid")
-    document.querySelector("#editBtn").classList.add("d-none")
-         }
-    
-    }
-    else{
-       showAlert()
-       clearForm()
-       document.getElementById('tocontainer').style.pointerEvents='none'
-    }
-    clearForm()
-}
-document.querySelector("#editBtn").addEventListener('click',editSite)
+
 
 
 
@@ -198,7 +200,7 @@ document.querySelector("#editBtn").addEventListener('click',editSite)
 
 
 
-
+    
 
  
 
