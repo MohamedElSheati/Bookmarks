@@ -21,7 +21,11 @@
             <input type="text" class="form-control " id="sitename" placeholder="Bookmark Name" >
             <label for="siteurl" class=" fw-bold p-2 label2">Site URL</label>
             <input type="text" class="form-control " id="siteurl" placeholder="Website URL">
-            <button type="button" class="d-grid  btn btn-danger px-5  my-4 mx-auto  " onclick="addSite()">Submitt</button>
+            <label for="siteDes" class="form-label fw-bold p-2">Site Describtion</label>
+            <textarea class="form-control " id="siteDes" rows="3" placeholder="Enter Describtion For Your Site"></textarea>
+            
+            <button type="button" class="d-grid  btn btn-danger px-5  my-4 mx-auto " id="submitBtn" >Submit</button>
+            <button type="button" class="d-grid  btn btn-primary px-5  my-4 mx-auto d-none" id="editBtn" onclick="editSite()">Edit</button>
             <input type="text" placeholder="Search For Site" id="searchInput" onkeyup="search()"
                 class="mx-auto my-3 form-control w-50 ">
           </form>  
@@ -32,6 +36,7 @@
                 <th>Website Name</th>
                 <th>Visit</th>
                 <th>Delete</th>
+                <th>Update</th>
             </thead>
             <tbody id="mydata">
                
